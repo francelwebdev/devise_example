@@ -17,12 +17,11 @@
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td>
-          <% if policy(product).edit? %>
-            <%= link_to 'Edit', edit_product_path(@product) %> |
+          <% if policy(product).update? %>
+            <%= link_to 'Edit', edit_product_path(product) %> |
           <% end %>
-          <% if policy(product).delete? %>
+          <% if policy(product).destroy? %>
             <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </td>
