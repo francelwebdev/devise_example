@@ -95,15 +95,6 @@ rails g migration add_admin_to_users admin:boolean
 rake db:migrate
 ```
 
-Set your favorite user `admin` property to `true` with the `rails console`.
-
-```shell
-rails console
-irb> user = User.last
-irb> user.admin = true
-irb> user.save
-```
-
 In your `product_policy` you can authorize admins to destroy products and all users to create / edit products.
 
 ```ruby
@@ -120,3 +111,13 @@ def destroy?
 end
 ```
 
+Set your favorite user `admin` property to `true` with the `rails console`.
+
+```shell
+rails console
+irb> user = User.last
+irb> user.admin = true
+irb> user.save
+```
+
+Now you should be able to destroy products.
