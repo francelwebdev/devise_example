@@ -24,7 +24,7 @@ Add `gem 'devise'` to your Gemfile, then
 bundle install
 rails generate devise:install
 # Follow instructions
-rails generate devise
+rails generate devise user
 rake db:migrate
 ```
 
@@ -67,7 +67,7 @@ rails g pundit:install
 Now you can add a policy for your product model:
 
 ```shell
-rails g pundit:policy
+rails g pundit:policy product
 ```
 
 And add the `authorize` method to the `new`, `create` and `set_product` methods
