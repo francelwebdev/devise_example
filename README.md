@@ -13,3 +13,13 @@ Scaffold a product model, and set root to `products#index`.
 ```shell
 rails generate scaffold product title:string description:text
 ```
+
+Add `gem 'devise'` to your Gemfile, then
+
+```shell
+bundle install
+rails generate devise:install
+# Follow instructions
+rails generate devise
+rake db:migrate
+```
