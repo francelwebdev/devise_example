@@ -75,4 +75,12 @@ And add the `authorize` method to the `new`, `create` and `set_product` methods
 authorize @product
 ```
 
-By default, users can't add / edit / destroy products.
+By default, users can't add / edit / destroy products. We must show relevant links based on policy:
+
+```ruby
+# app/views/products/index.html.erb
+<% if policy(Product).new? %>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>
+```
+
