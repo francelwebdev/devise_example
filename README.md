@@ -26,7 +26,7 @@ rake db:migrate
 
 Add "sign in" link in your `application.html.erb` layout:
 
-```ruby
+```erb
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path %> |
@@ -35,4 +35,10 @@ Add "sign in" link in your `application.html.erb` layout:
   <%= link_to "Sign up", new_user_registration_path %> |
   <%= link_to "Login", new_user_session_path  %>
 <% end %>
+```
+
+Protect your application controller:
+
+```ruby
+before_action :authenticate_user!
 ```
