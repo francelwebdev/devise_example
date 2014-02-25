@@ -1,5 +1,7 @@
 Steps followed to create this project:
 
+## Setup
+
 First create a brand new Rails project
 
 ```shell
@@ -13,6 +15,8 @@ Scaffold a product model, and set root to `products#index`.
 ```shell
 rails generate scaffold product title:string description:text
 ```
+
+## Devise (Authentication)
 
 Add `gem 'devise'` to your Gemfile, then
 
@@ -42,3 +46,20 @@ Protect your application controller:
 ```ruby
 before_action :authenticate_user!
 ```
+
+## Pundit (Authorization)
+
+Add `gem 'pundit'` to your Gemfile, and add it to your `ApplicationController`
+
+```ruby
+class ApplicationController < ActionController::Base
+  include Pundit
+  # ...
+end
+
+And setup the default policy:
+
+```shell
+rails g pundit:install
+```
+
