@@ -63,3 +63,16 @@ And setup the default policy:
 rails g pundit:install
 ```
 
+Now you can add a policy for your product model:
+
+```shell
+rails g pundit:policy
+```
+
+And add the `authorize` method to the `new`, `create` and `set_product` methods
+
+```rails
+authorize @product
+```
+
+By default, users can't add / edit / destroy products.
