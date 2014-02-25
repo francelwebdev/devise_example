@@ -56,6 +56,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   # ...
 end
+```
 
 And setup the default policy:
 
@@ -77,14 +78,12 @@ authorize @product
 
 By default, users can't add / edit / destroy products. We must show relevant links based on policy:
 
-```ruby
-# app/views/products/index.html.erb
+```erb
+<!-- app/views/products/index.html.erb -->
 <% if policy(Product).new? %>
   <%= link_to 'New Product', new_product_path %>
 <% end %>
 ```
-
-See commit 94dbb5349cb9f7e57b548cd9329079dcdc40619a for more links
 
 ## Setup an admin
 
