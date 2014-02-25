@@ -84,3 +84,13 @@ By default, users can't add / edit / destroy products. We must show relevant lin
 <% end %>
 ```
 
+See commit 94dbb5349cb9f7e57b548cd9329079dcdc40619a for more links
+
+## Setup an admin
+
+Add a new migration:
+
+```shell
+rails g migration add_admin_to_users admin:boolean
+```
+
